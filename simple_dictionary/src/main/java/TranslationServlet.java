@@ -10,11 +10,11 @@ import java.util.Map;
 public class TranslationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        response.setContentType("text/html;charset=UTF-8");
+//        request.setCharacterEncoding("utf-8");
 
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         Map<String, String> dictionary = new HashMap<>();
         dictionary.put("hello", "Xin chào");
         dictionary.put("how", "Thế nào");
@@ -27,7 +27,7 @@ public class TranslationServlet extends HttpServlet {
         writer.println("<html>");
 
         String result = dictionary.get(search);
-        if(result != null) {
+        if (result != null) {
             writer.println("Word: " + search);
             writer.println("</br>");
             writer.println("Result: " + result);
@@ -36,5 +36,10 @@ public class TranslationServlet extends HttpServlet {
         }
 
         writer.println("</html>");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 }
