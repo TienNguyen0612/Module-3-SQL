@@ -37,7 +37,7 @@
         <input <c:if test="${city != null}">value="${city.getArea()}"</c:if> type="text" name="area">
     </label>
     <label>Population :
-        <input <c:if test="${city != null}">value="${city.getPopulation()}"</c:if> type="text" name="popular">
+        <input <c:if test="${city != null}">value="${city.getPopulation()}"</c:if> type="text" name="population">
     </label>
     <label>GDP :
         <input <c:if test="${city != null}">value="${city.getGDP()}"</c:if> type="text" name="GDP">
